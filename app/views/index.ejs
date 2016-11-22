@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+<head>
+	<title><%= title %></title>
+    <% include  partials/header.ejs %>
+</head>
+<body>
+	<!-- Render AngularJS views  -->
+	<section ng-view></section>
+
+	<!-- Render the user object -->
+	<script type="text/javascript">
+		window.user = <%- user || 'null' %>;
+	</script>
+	
+	<!-- Load local libraries -->
+	<% include  partials/angular-lib.ejs %>
+
+	<!-- Load the shop module -->
+	<% include  partials/shop.ejs %>
+
+	<!-- Load the articles module -->
+	<script type="text/javascript" src="/articles/articles.client.module.js"></script>
+	<script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
+	<script type="text/javascript" src="/articles/services/articles.client.service.js"></script>
+	<script type="text/javascript" src="/articles/config/articles.client.routes.js"></script>
+
+
+	<!-- Load the users module -->
+	<% include  partials/user.ejs %>
+
+	<!-- Bootstrap AngularJS application -->
+	<script type="text/javascript" src="/application.js"></script>
+</body>
+</html>

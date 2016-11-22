@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<% include  partials/header.ejs %>
+</head>
+<body>
+
+	<div id="loginbox" class="col-sm-6 col-md-4 col-md-offset-4">
+		<img class="logo" src="lib/images/freebird-logo.svg" width="60px">
+		<h2 class="text-center">Register new account</h2>
+
+		<!-- Render the signup form  -->
+		<div class="auth-form">
+		<form class="auth-form-body" action="/signup" method="post">
+			<!-- Display flash messages  -->
+				<% for(var i in messages) { %>
+				<div class="flash alert alert-danger text-center"><%= messages[i] %></div>
+				<% } %>
+				
+			<div>
+				<label for="login_field">
+					First name
+				</label>
+				<input class="form-control input-block" type="text" name="firstName" placeholder="First name" />
+			</div>
+			<div>
+				<label for="login_field">
+					Last name
+				</label>
+				<input class="form-control input-block" type="text" name="lastName" placeholder="Last name"/>
+			</div>
+			<div>
+				<label for="login_field">
+					Email
+				</label>
+				<input class="form-control input-block" type="text" name="email" placeholder="Email"/>
+			</div>
+			<div>
+				<label for="login_field">
+					Username
+				</label>
+				<input  class="form-control input-block"  type="text" name="username" placeholder="Username"/>
+			</div>
+			<div>	
+				<label>Password
+					<a href="/" class="label-link">Cancel Registration</a>
+				</label>
+				
+				<input  class="form-control input-block" type="password" name="password" placeholder="Password"/>
+			</div>
+			<div>
+				<input class="btn btn-success btn-block" type="submit" value="Register" />
+			</div>
+		</form>
+		</div>
+	</div>
+
+</body>
+</html>

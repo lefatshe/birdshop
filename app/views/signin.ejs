@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<% include  partials/header.ejs %>
+</head>
+<body>
+  	
+
+	<div id="loginbox" class="col-sm-6 col-md-4 col-md-offset-4">
+		<img class="logo" src="lib/images/freebird-logo.svg" width="60px">
+		<h2 class="text-center">Sign in to FreeBird</h2>
+	
+		<!-- Render the signin form  -->
+		<div class="auth-form">
+			<form class="auth-form-body" action="/signin" method="post">
+				<!-- Display flash messages  -->
+				<% for(var i in messages) { %>
+				<div class="flash alert alert-danger text-center"><%= messages[i] %></div>
+				<% } %>
+				<div>
+					<label for="login_field">
+						Username or email address
+					</label>
+					<input class="form-control input-block" type="text" name="username" placeholder="Username" />
+				</div>
+				<div>
+					<label for="login_field">
+						Password
+						<a href="#" class="label-link">Forgot password?</a>
+					</label>
+					<input class="form-control input-block" type="password" name="password" placeholder="Password"/>
+				</div>
+				<div>
+					<input class="btn btn-success btn-block"  type="submit" value="login" />
+				</div>
+			</form>
+
+			<p class="create-account-callout mt-3">
+				New to FreeBird?
+				<a href="/signup" data-ga-click="Sign in, switch to sign up">Register an account</a>.
+			</p>
+
+		</div>
+
+
+	</div>
+
+</body>
+</html>
