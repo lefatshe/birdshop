@@ -2,15 +2,16 @@
 'use strict';
 
 // Set the main application name
-var mainApplicationModuleName = 'mean';
+var mainApplicationModuleName = 'freebird';
 
 // Create the main application
 var mainApplicationModule = angular.module(mainApplicationModuleName, [
 	'ngResource', 
 	'ngRoute', 
+	'ngCart',
 	'users', 
 	'shop', 
-	'articles'
+	'birds'
 	]
 );
 

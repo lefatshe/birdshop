@@ -1,8 +1,7 @@
-<!-- The example view -->
+<!-- The 'Bird Shop' view -->
 <section ng-controller="ShopController">
 	<!-- If the user is not authenticated show the authentication link -->
 	<div id="authentication" data-ng-show="!authentication.user">
-		
 		<img class="logo" src="lib/images/freebird-logo.svg" width="60px">
 		<h2>Welcome to FreeBird</h2>
 		<a href="/signin">login</a>		|        
@@ -11,11 +10,7 @@
 
 	<!-- Otherwise, show the user details and application links -->
 	<div data-ng-show="authentication.user">
-		<h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1>	
-		<a href="/signout">Signout</a>
-		<ul>
-			<li><a href="/#!/articles">List Articles</a></li>
-			<li><a href="/#!/articles/create">Create Article</a></li>
-		</ul>
+		<!-- Angular JS Views -->
+		 <div id="user-nav" ng-include="'shop/views/user-nav.client.view.html'"></div>
 	</div>
 </section>

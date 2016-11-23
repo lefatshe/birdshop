@@ -1,9 +1,10 @@
 {
-	"name": "freebird",
-	"version": "0.0.8",
-	"dependencies": {
-		"angular": "~1.3",
-		"angular-route": "~1.3",	
-		"angular-resource": "~1.3"
-	}
+  "name": "freebird",
+  "version": "0.0.8",
+  "dependencies": {
+    "angular": "~1.3",
+    "angular-route": "~1.3",
+    "angular-resource": "~1.3",
+    "ngCart": "ngcart#^1.0.0"
+  }
 }

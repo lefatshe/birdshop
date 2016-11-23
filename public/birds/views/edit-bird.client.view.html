@@ -1,0 +1,39 @@
+<!-- The edit bird view -->
+<section data-ng-controller="BirdsController" data-ng-init="findOne()">
+	<h1>Edit Bird</h1>
+	<!-- The edited bird form -->
+	<form data-ng-submit="update()" novalidate>
+		<div>
+			<label for="title">Title</label>
+			<div>
+				<input type="text" data-ng-model="bird.title" id="title" placeholder="Title" required>
+			</div>
+		</div>
+		<div>
+			<label for="title">Price</label>
+			<div>
+				<input type="text" data-ng-model="bird.price" id="price" placeholder="Price" required>
+			</div>
+		</div>
+		<div>
+			<label for="title">Image</label>
+			<div>
+				<input type="text" data-ng-model="bird.img" id="price" placeholder="Price" required>
+			</div>
+		</div>
+		<div>
+			<label for="content">Content</label>
+			<div>
+				<textarea data-ng-model="bird.content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+			</div>
+		</div>
+		<div>
+			<input type="submit" value="Update">
+		</div>
+		<!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+	</div>
+</section>

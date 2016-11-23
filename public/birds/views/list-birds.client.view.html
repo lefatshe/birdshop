@@ -1,0 +1,115 @@
+<!-- The list birds view -->
+<section data-ng-controller="BirdsController" data-ng-init="find()" class="row">
+		
+		<!-- The list birds Filter results -->
+		<div class="expand-panel-header">
+			<span>Search filter </span> <img src="lib/images/filter-icon.png" width="40px">
+		</div>
+
+		<div class="expand-panel col-md-12">
+			<div class="col-md-4">
+				<label>Search name</label>
+				<input class="form-control" type="text" name="" value="" data-ng-model="search.title" placeholder="Bird Name">
+			</div>
+
+			<div class="col-md-4">
+				<label>Search price</label>
+				<select class="form-control" placeholder="Filter by Price" type="select" data-ng-model="search.price">
+                        <option value="" disabled selected>Select Search By Price</option>
+                        <option value="">All Available</option>
+                        <option value="80">R 80</option>
+                        <option value="100">R 100</option>
+                        <option value="120">R 120</option>
+                        <option value="140">R 140</option>
+                        <option value="160">R 160</option>
+                        <option value="180">R 180</option>
+                        <option value="200">R 200</option>
+                </select>
+			</div>
+
+		</div>
+
+		<div class="col-md-3" data-ng-repeat="bird in birds | filter:search">
+				<div class="item">
+					<div class="item-overlay">
+						<div class="sale-tag"><span>SALE</span></div>
+					</div>
+					
+					<img ng-src="{{bird.img}}" class="img-responsive">
+
+					<div class="item-content">
+						<div class="item-top-content">
+							<div class="item-top-content-inner">
+								<div class="item-product">
+									<div class="item-top-title">
+										<h2>{{bird.title}}</h2>
+										<p class="subdescription">
+											{{bird.subtitle}}
+										</p>
+									</div>
+								</div>
+								<div class="item-product-price">
+									<span class="price-num">{{bird.price}}</span>
+									<p class="subdescription">{{bird.preprice}}</p>
+									<div class="old-price"></div>
+								</div>
+							</div>	
+						</div>
+						<div class="item-add-content">
+							<div class="item-add-content-inner">
+								<div class="section">
+									<!--<a href="#" class="">Buy now</a>-->
+									<ngcart-addtocart id="{{bird._id}}" name="{{bird.title}}" thumbnail="{{bird.img}}" price="{{bird.price}}" quantity="1" quantity-max="10">Add to Cart</ngcart-addtocart> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>	
+			
+
+	<!-- If there are no birds in the list, suggest the user's create a new bird item for sale -->
+	<div class="text-center" data-ng-hide="!birds || birds.length">
+		No birds yet, why don't you <a href="/#!/birds/create">add one</a>?
+	</div>
+</section>
+
+
+
+
+
+
+
+<!--  ngCart TEMPALATES -->
+<script type="text/ng-template" id="template/ngCart/addtocart.html">
+
+	<div ng-hide="attrs.id">
+		<a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
+	</div>
+
+	<div ng-show="attrs.id">
+
+		<div>
+			<span ng-show="quantityMax">
+				<select class="form-control" name="quantity" id="quantity" ng-model="q" ng-options=" v for v in qtyOpt"></select>
+			</span>
+			
+			<br/>
+			<a class="btn buy expand" ng-click="ngCart.addItem(id, name, price, q, data)" ng-transclude></a>
+		</div>
+
+		<mark  ng-show="inCart()">
+			This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+		</mark>
+
+	</div>
+
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#box').click(function() {
+        $(this).find(".hidden").toggleClass('open');
+    });
+});
+</script>

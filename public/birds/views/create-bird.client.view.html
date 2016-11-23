@@ -1,0 +1,87 @@
+<!-- The create bird view -->
+<div class="header header-wrapper">
+	<div class="site-branding col-md-2 pull-left">
+      <img class="logo" src="lib/images/freebird-logo.svg" width="60px">
+   </div>
+   <div class="navbar-right">
+      <ul class="list-inline tools">
+		  <li class="list sel">
+            <a class="nav-item col-md-2"  href="/#!/">Back</a>
+         </li>
+	 </ul>
+	 </div>
+</div>
+
+
+<section id="create" data-ng-controller="BirdsController">
+	<div id="page-content-wrapper">
+	<h1 class="shortcode_title secondary_font text-center">Sell Bird Item on Our Shop</h1>
+	<hr/>
+	
+	<div class="col-md-6">
+		<div class="bd-example">
+			<dl>
+				<dt>Description lists</dt>
+				<dd>A description list is perfect for defining terms. Lorem ipsum dolor sit ametLorem ipsum dolor sit amet Lorem ipsum dolor sit amet</dd>
+				<dt>Euismod</dt>
+				<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem.Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</dd>
+				<dd>Donec id elit non mi porta gravida at eget metus.</dd>
+				<dt>Malesuada porta</dt>
+				<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+			</dl>
+		</div>
+	</div>
+	
+	<!-- The new bird form -->
+	<form data-ng-submit="create()" novalidate class="col-md-4">
+		<div class="form-group">
+			<label for="title">Title</label>
+			<div>
+				<input class="form-control" type="text" data-ng-model="title" id="title" placeholder="Title" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="title">Sub Title</label>
+			<div>
+				<input class="form-control" type="text" data-ng-model="subtitle" id="title" placeholder="Sub Title" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="title">Price</label>
+			<div>
+				<input class="form-control" type="text" data-ng-model="price" id="title" placeholder="Price" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="title">Previous Price</label>
+			<div>
+				<input class="form-control" type="text" data-ng-model="preprice" id="title" placeholder="Previous Price" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="title">Image</label>
+			<div>
+				<input class="form-control" type="text" data-ng-model="img" id="title" placeholder="Image" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="content">Content</label>
+			<div>
+				<textarea class="form-control" data-ng-model="content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+			</div>
+		</div>
+		<div>
+			<input type="submit" class="btn btn-primary btn-block">
+		</div>
+		<!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+	</div>
+</section>

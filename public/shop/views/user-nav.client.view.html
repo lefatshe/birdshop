@@ -1,0 +1,77 @@
+<!-- The 'Bird Shop' allow user to navigate Single page App -->
+
+<div class="header header-wrapper">
+   <div class="site-branding col-md-2 pull-left">
+      <img class="logo" src="lib/images/freebird-logo.svg" width="60px">
+   </div>
+
+   
+   <div class="navbar-right">
+      <ul class="list-inline tools">
+         <li class="list">
+            <a data-toggle="tooltip" data-placement="left" title="Search Cart Items" class="nav-item col-md-2" href="#"><i class="glyphicon glyphicon-search"></i></a>
+         </li>
+         <li class="list" data-toggle="tooltip" data-placement="left" title="See User Details">
+            <a class="nav-item col-md-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="glyphicon glyphicon-user"></i>
+            </a>
+            <ul class="dropdown-menu user-info">
+               <li class="user-tab"><a href=""><span class="user hidden-sm" data-ng-show="authentication.user">
+             <strong>{{authentication.user.fullName}}</strong>
+        </span></a></li>
+               <li><a href="">Update Details</a></li>
+               <li><a href="">Redeem Cash</a></li>
+               <li><a href="">Invite friends</a></li>
+               <li>
+                   <a class="log-out btn btn-block" href="/signout">
+                    Log out
+                   </a>
+              </li>
+            </ul>
+         </li>
+         <li class="list"  ng-controller="ShopController">
+            <a data-toggle="tooltip" data-placement="left" title="View Cart" class="nav-item col-md-2" href="#menu-toggle" id="menu-toggle">
+                
+                <i class="glyphicon glyphicon-shopping-cart"></i></a>
+                <ngcart-summary></ngcart-summary>
+         </li>
+         <li class="splict"></li>
+         <li class="list sel">
+            <a class="nav-item col-md-2" data-toggle="tooltip" data-placement="left" title="Sell New Bird Item" href="/#!/birds/create"><i class="glyphicon glyphicon-plus"></i></a>
+         </li>
+         
+      </ul>
+   </div>
+</div>
+<div id="wrapper" class="toggled">
+   <!-- Sidebar -->
+   <div id="sidebar-wrapper">
+      <div ng-include="'shop/views/cart.client.view.html'"></div>
+   </div>
+   <!-- /#sidebar-wrapper -->
+   <!-- Page Content -->
+   <div id="page-content-wrapper">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-12">
+                <h1 class="shortcode_title secondary_font text-center">Brand New in the Shop</h1>
+                
+                <hr/>
+               <div ng-include="'birds/views/list-birds.client.view.html'"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- /#page-content-wrapper -->
+</div>
+
+
+<script type="text/ng-template" id="template/ngCart/summary.html"><div class="row">
+ 
+    <span class="counter">
+        <em>{{ ngCart.getTotalItems() }}</em>
+        <ng-pluralize count="ngCart.getTotalItems()"></ng-pluralize>
+    </span>
+
+</div>
+</script>
