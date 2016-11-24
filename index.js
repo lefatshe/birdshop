@@ -1,4 +1,4 @@
-// name of App 'safetripsapp'
+// name of App 'Free Bird'
 process.env.TMPDIR = 'tmp'; 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development' || 'production';
 
