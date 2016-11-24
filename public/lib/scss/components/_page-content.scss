@@ -1,0 +1,29 @@
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-left: -380px;
+}
+
+
+/* page setup */
+
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+section.row {
+  margin: 0 0 30px 0;
+}
+
+.row {
+  width: 100%;
+  display: block;
+  clear: both;
+}

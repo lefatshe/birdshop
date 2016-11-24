@@ -1,0 +1,56 @@
+div#authentication {
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
+  .logo {
+    margin-top: 20%;
+  }
+}
+
+.auth-form {
+  width: 340px;
+  margin: 0 auto;
+  label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: normal;
+   }
+}
+
+
+.auth-form-body {
+    padding: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #d8dee2;
+    border-radius: 3px 3px;
+}
+
+.auth-form-body .input-block {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+.auth-form .btn {
+  margin-top: 20px;
+}
+
+.label-link {
+  float: right;
+  font-size: 12px;
+}
+
+#loginbox img.logo {
+  margin: 0 auto;
+  display: block;
+  margin-top: 30px;
+}
+
+.create-account-callout {
+    padding: 15px 20px;
+    text-align: center;
+    border: 1px solid #d8dee2;
+    border-radius: 5px;
+}

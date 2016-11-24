@@ -1,0 +1,26 @@
+ul.dropdown-menu.user-info {
+  min-width: 270px;
+  margin-right: 10px;
+}
+
+li {
+  &.user-tab {
+    background: black;
+    margin-top: -5px;
+    border-radius: 3px 3px 0px 0px;
+    color: white !important;
+    a {
+      &:hover {
+        background: black;
+      }
+      color: white !important;
+    }
+  }
+  &.list.sel {
+    background: #35a76e;
+    border: 1px solid green !important;
+    a {
+      color: white !important;
+    }
+  }
+}

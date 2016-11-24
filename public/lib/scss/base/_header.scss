@@ -1,0 +1,50 @@
+.site-branding .logo {
+  margin: 10px 10px 30px 10px;
+}
+
+.header-wrapper {
+  height: 80px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  z-index: 10000;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  transition: background 0.3s ease, -webkit-transform 0.5s cubic-bezier(1, 0, 0.5, 1) 0.3s;
+  transition: transform 0.5s cubic-bezier(1, 0, 0.5, 1) 0.3s, background 0.3s ease;
+  transition: transform 0.5s cubic-bezier(1, 0, 0.5, 1) 0.3s, background 0.3s ease, -webkit-transform 0.5s cubic-bezier(1, 0, 0.5, 1) 0.3s;
+  &.active {
+    background: #23282d;
+    a.nav-item {
+      color: white;
+    }
+    li {
+      border-color: white;
+    }
+  }
+}
+
+.user-info li {
+  text-align: left;
+  border-bottom: 1px solid #CCC;
+  padding: 10px;
+  &:last-child {
+    border-bottom: 0px solid #CCC;
+  }
+}
+
+a.nav-item {
+  cursor: pointer;
+  color: black;
+}
